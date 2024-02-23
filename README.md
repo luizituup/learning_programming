@@ -50,6 +50,6 @@ features
 
 ## API Definition
 
-Get beers: https://api.punkapi.com/v2/beers
-Search beer by name: https://api.punkapi.com/v2/beers?beer_name={beer name}
-Get beet: https://api.punkapi.com/v2/beers/{id beer}
+- Get beers: https://api.punkapi.com/v2/beers
+- Search beer by name: https://api.punkapi.com/v2/beers?beer_name={beer name}
+- Get beet: https://api.punkapi.com/v2/beers/{id beer}
