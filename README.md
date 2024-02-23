@@ -1,16 +1,55 @@
 # learning_programming
 
-A new Flutter project.
+A new Flutter project of beers catalog.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+I this project we going to create a beer catalog app, when we can se list of beers, search and watch detail.
 
-A few resources to get you started if this is your first Flutter project:
+For technical side the project have to use:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+* Riverpod
+* GetIt
+* Dio
+* freezed
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+In that way the organization of folders is tah one:
+
+core
+  - api (api abstraction get, post and api implementation)
+  - di (GetIt locator module)
+features
+  - beers
+    - di (module of GetIt with repository and datasource definitions)
+    - domain
+      - entity (models like Beer)
+      - use_case (use case focus on beers list)
+      - repository (abstract class with beers functions get, insert, etc...)
+    - data
+      - datasource (remote and local datasources)
+      - repository (repository implemetation define in domain)
+    - presentation
+      - screen (screen widget with components to use)
+      - widget (custom widget like button, textfield with custom params)
+      - component (component with multiple widgets and provider connection)
+      - provider (provider of information to get beers, search, etc...)
+- beer
+    - di (module of GetIt with repository and datasource definitions)
+    - domain
+      - entity (empty)
+      - use_case (use case focus on beer detail)
+      - repository (abstract class with beer detail function)
+    - data
+      - datasource (remote and local datasources)
+      - repository (repository implemetation define in domain)
+    - presentation
+      - screen (screen widget with components to use)
+      - widget (custom widget like button, textfield with custom params)
+      - component (component with multiple widgets and provider connection)
+      - provider (provider of information to get beer)
+
+## API Definition
+
+Get beers: https://api.punkapi.com/v2/beers
+Search beer by name: https://api.punkapi.com/v2/beers?beer_name={beer name}
+Get beet: https://api.punkapi.com/v2/beers/{id beer}
